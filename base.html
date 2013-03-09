@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{{config.title}} | 
+  {% block title %}
+		 blog tool powered by Google App Engine
+	{% endblock %}
+</title>
+{% block css %}
+	<link href="/static/css/blueprint/screen.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block extracss %} {% endblock %}
+{% block extrajs %} {% endblock %}
+<link rel="alternate" href="http://Prabhblog.appspot.com/feed" type="application/atom+xml" title="Prabh blog"/>
+</head>
+
+<body>
+<div id="header">
+	<div id="logo">
+		<a href="/" id="sitetitle">
+			{{config.title}}</a> 
+	</div><!-- logo -->
+	<div id="feed"><a href="http://Prabhblog.appspot.com/feed">
+		<img src="/static/images/feed.png" alt="Subscribe to this blog"/></a>
+	</div><!-- feed -->
+
+	<div id="search">
+		<form action="http://www.google.com/search" method="get">
+			<div>
+				<input name="q" size="20" type="text"/>
+				<input type="submit" value="Search"/>
+				<input name="domains" type="hidden" value="Prabhblog.appspot.com"/>
+				<input name="sitesearch" type="hidden" value="Prabhblog.appspot.com"/>
+			</div>
+		</form>
+	</div><!-- search -->
+</div><!-- header -->
+
+<div id="body">
+<div class="full container">
+{% if message %}
+	{% block message %}
+		{{message}}
+	{% endblock %}
+{% endif %}
+<div class="span-15 prepend-1 colborder">
+{% block content %}
+{% endblock %}
+</div>
+<div class="span-7 last">
+	<ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/docs">Documentation</a></li>
+	<li><a href="/feed">Blog Feed</a></li>
+	</ul>
+<h3>Meta</h3>
+<p><small>Login required</small></p>
+<ul>
+<li><a href="/new">New Entry</li>
+<li><a href="/config">Blog Config</li>	
+</ul>
+	
+</div>
+
+</div><!-- full -->
+
+<div class="container"><a href="/entries">All posts</a></div>
+</div><!-- body -->
+<hr>
+<div id="footer" class="container">
+	&copy;2008 
+Prabh blog - <a href="/about">About Prabh Blog</a> - <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons License</a>
+	{% block extrafooter %}
+		
+	{% endblock %}
+</div>
+<!-- 
+	Layout for Prabh blog app - http://Prabhblog.appspot.com
+	Derived from - http://bret.appspot.com
+	License: CC2.5 - http://creativecommons.org/licenses/by/2.5/
+-->
+</body>
+</html>
