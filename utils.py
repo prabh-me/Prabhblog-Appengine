@@ -1,3 +1,5 @@
+
+
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -21,6 +23,7 @@ class PrabhRequestHandler(webapp.RequestHandler):
         template_values.update({'users': users})
         path = os.path.join(os.path.dirname(__file__), tmpl)
         self.response.out.write(template.render(path, template_values))
+
 
 def administrator(method):
     @functools.wraps(method)
