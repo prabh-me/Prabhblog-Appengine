@@ -4,7 +4,7 @@
 webapp.py
 
 entry point for Prabh blog app
-Copyright (c) 2013 Pradeep Gowda.
+Copyright (c) 2013 Prabhjot Singh.
 """
 import wsgiref.handlers
 
